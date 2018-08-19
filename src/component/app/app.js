@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import {Provider} from 'react-redux';
-import {BrowserRouter, Link, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import createStore from '../../lib/store';
 import CategoryContainer from '../category-container';
 
@@ -14,14 +14,9 @@ export default class App extends Component {
             <div>
               <Provider store={store}>
                 <BrowserRouter>
-                  <Fragment>
-                    <ul>
-                      <li><Link to="/">CategoryContainer</Link></li>
-                    </ul>
                     <div>
                       <Route exact path="/" component={CategoryContainer}/>
                     </div>
-                  </Fragment>
                 </BrowserRouter>
               </Provider>
             </div>

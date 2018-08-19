@@ -1,31 +1,35 @@
+import uuid from 'uuid/v4';
 // Actions
-export const ADD = 'expense/ADD';
-export const UPDATE = 'expense/UPDATE';
-export const DELETE = 'expense/DELETE';
+export const EXP_ADD = 'expense/ADD';
+export const EXP_UPDATE = 'expense/UPDATE';
+export const EXP_DELETE = 'expense/DELETE';
 // Reducer
 let initialState = [];
 
 export default (state = initialState, action) => {
   let {type, payload} = action;
   switch(type) {
-  case ADD: return [...state, payload];
-  case UPDATE: return state.map(expense=> expense.id === payload.id ? payload : expense);
-  case DELETE: return state.filter(expense=> expense.id !== payload.id);
+  case EXP_ADD: return [...state, payload];
+  case EXP_UPDATE: return state.map(expense=> expense.id === payload.id ? payload : expense);
+  case EXP_DELETE: return state.filter(expense=> expense.id !== payload.id);
   default: return state;
   }
 };
 
 // Action Creators
-export const expenseCreate = (expense) => ({
-  type: ADD,
-  payload: expense,
-});
+export const expenseCreate = (expense) => {
+  expense.id = uuid();
+  return {
+    type: EXP_ADD,
+    payload: expense,
+  };
+};
 export const expenseUpdate = expense => ({
-  type: UPDATE,
+  type: EXP_UPDATE,
   payload: expense,
 });
 export const expenseDelete = expense => ({
-  type: DELETE,
+  type: EXP_DELETE,
   payload: expense,
 });
 

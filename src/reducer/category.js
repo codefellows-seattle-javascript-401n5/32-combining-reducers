@@ -1,6 +1,6 @@
-import defaultState from '../lib/default-state';
+//import defaultState from '../lib/default-state';
 
-let initialState = defaultState;
+let initialState = [];
 
 export default (state=initialState, action) => {
   let {type, payload} = action;

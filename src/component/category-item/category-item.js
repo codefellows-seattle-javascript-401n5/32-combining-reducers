@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import CatCreateForm from '../category-form/category-form';
 //import ExpenseForm from '../expense-form/expense-form';
-
+import ExpenseContainer from '../expense-container'
 export default class CategoryItem extends Component {
   constructor(props) {
     super(props);
@@ -34,9 +34,9 @@ export default class CategoryItem extends Component {
               <h3>${this.props.category.budget}.00</h3>
             </li>
             <button onClick={this.onDestroy}>Delete</button>
-      {this.state.view && <CatCreateForm onComplete={this.catUpdate} category={this.props.category} onClick={this.props.returnView} buttonText = 'edit'/>}
+      {this.state.view && <div><CatCreateForm onComplete={this.catUpdate} category={this.props.category} onClick={this.props.returnView} buttonText = 'edit'/><button onClick={this.returnView}>cancel update</button></div>}
           </div>
-          {/* <ExpenseForm/> */}
+          <ExpenseContainer/>
         </Fragment>
       );
       
