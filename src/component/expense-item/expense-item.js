@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ExpenseForm from '../expense-form/expense-form';
-
+import ExpenseContainer from '../expense-container';
 export default class ExpenseItem extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +14,7 @@ export default class ExpenseItem extends Component {
   returnView = () => {
     this.setState({view: false});
   }
- expenseDelete = () => {
+onDelete = () => {
       this.props.onRemove(this.props.expense);
     }
   
@@ -32,8 +32,8 @@ export default class ExpenseItem extends Component {
             <li>
               <h3>${this.props.expense.price}.00</h3>
             </li>
-            <button onClick={this.onDestroy}>Delete</button>
-      {this.state.view && <div><ExpenseForm onComplete={this.expenseUpdate} expense={this.props.expense} onClick={this.props.returnView} buttonText = 'edit'/><button onClick={this.returnView}>cancel update</button></div>}
+            <button onClick={this.onDelete}>Delete</button>
+      {this.state.view && <div><ExpenseForm onComplete={this.expenseUpdate} expense={this.props.expense} onClick={this.props.returnView} buttonText = 'edit expense'/><button onClick={this.returnView}>cancel update</button></div>}
           </div>
           
         </Fragment>

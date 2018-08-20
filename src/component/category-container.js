@@ -3,15 +3,12 @@ import { connect } from 'react-redux';
 import CatCreateForm from './category-form/category-form';
 import CategoryItem from './category-item/category-item';
 import {catCreate, catUpdate, catDestroy} from '../action/category-action';
-import {expenseCreate, expenseDelete, expenseUpdate} from '../reducer/expense';
-import ExpenseForm from './expense-form/expense-form';
 
-
- const Dashboard = (props) => {
+ const CategoryContainer = (props) => {
 
     return(
       <Fragment>
-        <h1>Dashboard</h1>
+        <h1>Budget Tracker 32</h1>
         <CatCreateForm onComplete={props.catCreate} buttonText='submit'/>
         
         <ul>
@@ -19,11 +16,7 @@ import ExpenseForm from './expense-form/expense-form';
         <CategoryItem category={category} key={category.id} onComplete={props.catUpdate} onDestroy={props.catDestroy}/>
       ))}
     </ul>
-    {/* <ul>
-      {props.expense.map(expense => (
-        <expenseItem expense={expense} key={expense.id} onComplete={props.expenseUpdate} onRemove={props.expenseDelete}/>
-      ))}
-    </ul> */}
+
     
       </Fragment>
       );
@@ -42,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
   // expenseUpdate: expense => dispatch(expenseUpdate(expense)),
   // expenseDelete: expense => dispatch(expenseDelete(expense)),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryContainer);

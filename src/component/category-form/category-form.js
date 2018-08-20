@@ -16,7 +16,7 @@ export default class CatCreateForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    this.props.onComplete(this.state);//coming from parent (dashboard)
+    this.props.onComplete(this.state);
     this.setState({ ...this.defaultState, id: uuid() });
     console.log(this.state);
   };
@@ -33,11 +33,6 @@ export default class CatCreateForm extends Component {
   this.setState(changedBit);
   }
 
-    // category = () => {
-    //     if(this.state.view === 'normal') {
-
-    //     }
-    // }
     display = () => {
       if(this.state.id !== null) {
         return(this.state.name);

@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import uuid from 'uuid/v4';
 export default class ExpenseForm extends Component {
     constructor(props){
         super(props);
@@ -14,8 +13,8 @@ export default class ExpenseForm extends Component {
     }
     onSubmit = e => {
         e.preventDefault();
-        this.props.onComplete(this.state);//coming from parent (dashboard)
-        this.setState({ ...this.state, id: uuid }); //FIXME:{categoryID: props.category.name} add this value in somehow
+        this.props.onComplete(this.state);
+        this.setState({ ...this.state, categoryID: ''}); //FIXME:{categoryID: props.category.name} add this value in somehow
         console.log('Expense form', this.state);
       };
     
@@ -33,10 +32,11 @@ export default class ExpenseForm extends Component {
     render() {
         return (
             <fieldset>
+                <button onClick={this.props.closeExpense}>X</button>
             <form onSubmit={this.onSubmit} onChange={this.onChange}>
                 <input name="name" placeholder="expense name" value = {this.state.name}/>
                 <input name="price" type="number" value = {this.state.price}/>
-                <button>submit expense</button>
+                <button onClick={this.props.returnView}>{this.props.buttonText}</button>
             </form>
             </fieldset>
         );
