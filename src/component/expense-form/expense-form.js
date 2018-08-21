@@ -6,6 +6,7 @@ export default class ExpenseForm extends Component {
             timestamp: Date.now(),
             name: '',
             price: 0,
+            categoryID: this.props.categoryName,
         }
         const initialState = this.props.expense || this.defaultState;
 
@@ -14,7 +15,7 @@ export default class ExpenseForm extends Component {
     onSubmit = e => {
         e.preventDefault();
         this.props.onComplete(this.state);
-        this.setState({ ...this.state, categoryID: ''}); //FIXME:{categoryID: props.category.name} add this value in somehow
+        this.setState({ ...this.state, categoryID: ''}); 
         console.log('Expense form', this.state);
       };
     

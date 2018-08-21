@@ -9,7 +9,7 @@ import ExpenseItem from './expense-item/expense-item';
     return(
       <Fragment>
         <h1>exp cont.</h1>
-        <ExpenseForm onComplete={props.expenseCreate} buttonText='submit'/>
+        <ExpenseForm categoryName={props.categoryName} onComplete={props.expenseCreate} buttonText='submit'/>
     <ul>
       {props.expense.map(expense => (
         <ExpenseItem expense={expense} key={expense.id} onComplete={props.expenseUpdate} onRemove={props.expenseDelete}/>
