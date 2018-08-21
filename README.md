@@ -1,6 +1,6 @@
 # Budget Tracker Redux Combining Reducers lab 32
 
-PR: 
+PR: https://github.com/Lennerblom/32-combining-reducers/pull/1
 ---
    This Budget app was created using React and Redux and used the `combineReducers()` function from Redux. 
    
