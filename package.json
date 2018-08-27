@@ -1,0 +1,46 @@
+{
+  "name": "32-combining-reducers",
+  "version": "1.0.0",
+  "description": "![cf](http://i.imgur.com/7v5ASc8.png) 32: Combining Reducers ===",
+  "main": "index.js",
+  "dependencies": {
+    "enzyme": "3.4.0",
+    "enzyme-adapter-react-16": "1.2.0",
+    "eslint-plugin-jest": "^21.18.0",
+    "jest-enzyme": "6.0.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "react-test-renderer": "16.4.2",
+    "redux": "^4.0.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lennerblom/32-combining-reducers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lennerblom/32-combining-reducers/issues"
+  },
+  "homepage": "https://github.com/Lennerblom/32-combining-reducers#readme"
+}
